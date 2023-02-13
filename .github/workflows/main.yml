@@ -13,7 +13,7 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKERPASSWORD }}  
       run: |
         docker login -u $DOCKERUSER -p $DOCKERPASSWORD
-    - name: docker build iva-slack-auto-report
+    - name: docker build grafana-report-mailer
       run: |
         docker build -t tribuwana/grafana-report-mailer:latest .
     - name: docker push
