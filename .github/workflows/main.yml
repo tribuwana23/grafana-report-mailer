@@ -12,7 +12,7 @@ jobs:
         DOCKER_USER: ${{ secrets.DOCKERUSER }}   
         DOCKER_PASSWORD: ${{ secrets.DOCKERPASSWORD }}  
       run: |
-        docker login -u $DOCKERUSER -p $DOCKERPASSWORD
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: docker build grafana-report-mailer
       run: |
         docker build -t tribuwana/grafana-report-mailer:latest .
