@@ -9,10 +9,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: docker login
       env:
-        DOCKER_USER: ${{ secrets.DOCKER_USER }}   
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+        DOCKER_USER: ${{ secrets.DOCKERUSER }}   
+        DOCKER_PASSWORD: ${{ secrets.DOCKERPASSWORD }}  
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        docker login -u $DOCKERUSER -p $DOCKERPASSWORD
     - name: docker build iva-slack-auto-report
       run: |
         docker build -t tribuwana/grafana-report-mailer:latest .
